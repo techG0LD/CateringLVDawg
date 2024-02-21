@@ -1,5 +1,12 @@
 //import { BrowserRouter as Router,Link,Route,Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { Card } from 'react-bootstrap';
+
+
 
 function App() {
 
@@ -7,22 +14,83 @@ function App() {
   
   return (
     <div className="App">
+      <Container fluid >
+        <Card className="bg-dark text-white">
+            <Card.Img style={{height:"45vh"}}
+              src="https://img.freepik.com/free-photo/buffet-table-with-snacks-from-burgers-cheeses-etc_140725-9343.jpg?w=1380&t=st=1708069805~exp=1708070405~hmac=9ec88907fd6930bf485a2fbe23f0ec66a4ff8f7255ed03f48f0293bfa60e3bc7" alt="Card image" />
+            <Card.ImgOverlay>
+              <Card.Title>Chef Top Dawg</Card.Title>
+              <Card.Text>
+                Make your events delicious and memorable
+              </Card.Text>
+              
+             
+            </Card.ImgOverlay>
+        </Card>
+
+        <Row>
+          <Col >
+          <h2>About Me</h2>
+          <p>Hi, I'm Kellz, the owner and chef of Chef Top Dawg Catering . I have been in the catering business for over 10 years, and I love creating mouth-watering dishes for all kinds of occasions. Whether it's a wedding, a birthday, a corporate event, or a family gathering, I can provide you with a customized menu that suits your taste and budget.</p>
+         
+          </Col>
+        </Row>
+
+        <Row>
+          <h2>My Crafted Dishes</h2>
+          <Col>
+            <Card>
+              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/400" alt="A fresh and colorful salad" />
+              <Card.Body>
+                <Card.Text>
+                A fresh and colorful salad with mixed greens, cherry tomatoes, cucumbers, carrots, and a tangy dressing.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/500" alt="A creamy and cheesy pasta" />
+              <Card.Body>
+                <Card.Text>
+                A creamy and cheesy pasta with penne, chicken, mushrooms, spinach, and parmesan cheese.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/500" alt="A decadent and moist chocolate cake"/>
+              <Card.Body>
+                <Card.Text>
+                A decadent and moist chocolate cake with layers of rich chocolate ganache and whipped cream.
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+
+        
+      </Container>
+      
+          
+          
       
       {/* Header */}
-      <div className="hero">
-        <h1>Chef Top Dawg</h1>
-        <img src='http://placekitten.com/200' alt='Chef Kellz'></img>
-        <p>Make your events delicious and memorable</p>
-      </div>
+      {/* <div className="hero">
+        <h1></h1>
+        <img src='' alt='Chef Kellz'></img>
+        <p></p>
+      </div> */}
+
+
       {/* About */}
-      <div className="about">
-        <h2>About Me</h2>
-        <p>Hi, I'm Kellz, the owner and chef of Chef Top Dawg Catering . I have been in the catering business for over 10 years, and I love creating mouth-watering dishes for all kinds of occasions. Whether it's a wedding, a birthday, a corporate event, or a family gathering, I can provide you with a customized menu that suits your taste and budget.</p>
-      </div>
+      
 
       {/* Gallery dishes */}
-      <div className="dishes">
-        <h2>My Crafted Dishes</h2>
+      {/* <div className="dishes">
+        
         <div className="dish-cards">
           
           <div className="dish">
@@ -40,7 +108,7 @@ function App() {
             <p>A decadent and moist chocolate cake with layers of rich chocolate ganache and whipped cream.</p>
           </div>
         </div>
-      </div>
+      </div> */}
 
 
 
