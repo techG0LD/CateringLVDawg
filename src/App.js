@@ -116,15 +116,19 @@ function App() {
         </Row>
 
         <br/>
-        <Row>
+        <Row >
           <h3>Contact Us</h3>
-          <Col>
-          
+          <Col xs={12} md={6} className="d-flex flex-column ">
+            <div className='logo'>
+              <img src='http://placekitten.com/200' alt='logo'></img>
+            </div>
+            
             <p>Phone: (123) 456-7890</p>
             <p>Email: cateringco@gmail.com</p>
             <p>Address: 123 Main Street, Las Vegas, NV 89101</p>
           </Col>
-          <Col>
+
+          <Col xs={12} md={6}>
           <h3>Have an inquiry?</h3>
             <p>Please fill out the form below and I will get back to you as soon as possible.</p>
             <form >
@@ -268,7 +272,7 @@ function App() {
             
           </div>
           {/* second column : form to submit a request */}
-          <div className="form">
+          {/* <div className="form">
             <h3>Have an inquiry?</h3>
             <p>Please fill out the form below and I will get back to you as soon as possible.</p>
             <form >
@@ -306,7 +310,8 @@ function App() {
               <textarea id="message" name="message" placeholder="Enter any additional message"></textarea>
               <button type="submit">Submit</button>
             </form>
-          </div>
+          </div> */}
+
         </div>
       </div>
     </div>
