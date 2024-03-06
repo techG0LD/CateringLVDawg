@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color:rgb(91, 24, 24) ;
 }
 
 img {
@@ -8,6 +9,13 @@ img {
   
 }
 
+.secB{
+  background-color: red;
+}
+
+.secA{
+  background-color: grey;
+}
 
 /* .App-logo {
   height: 40vmin;

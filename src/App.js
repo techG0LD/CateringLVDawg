@@ -15,10 +15,10 @@ function App() {
   
   return (
     <div className="App">
-      <Container fluid >
-        <Card className="bg-dark text-white">
-            <Card.Img style={{height:"45vh"}}
-              src="https://img.freepik.com/free-photo/buffet-table-with-snacks-from-burgers-cheeses-etc_140725-9343.jpg?w=1380&t=st=1708069805~exp=1708070405~hmac=9ec88907fd6930bf485a2fbe23f0ec66a4ff8f7255ed03f48f0293bfa60e3bc7" alt="Card image" />
+      <Container fluid>
+        <Card  style={{maxWidth:"500px",margin:"auto"}} className="secA bg-dark text-white">
+            <Card.Img style={{height:"50vh"}}
+              src="kelz.jpeg" alt="Card image" />
             <Card.ImgOverlay>
               <Card.Title>Chef Top Dawg</Card.Title>
               <Card.Text>
@@ -29,7 +29,7 @@ function App() {
             </Card.ImgOverlay>
         </Card>
         <br/>
-        <Row>
+        <Row className='secB'>
           <Col >
           <h2>About Me</h2>
           <p>Hi, I'm Kellz, the owner and chef of Chef Top Dawg Catering . I have been in the catering business for over 10 years, and I love creating mouth-watering dishes for all kinds of occasions. Whether it's a wedding, a birthday, a corporate event, or a family gathering, I can provide you with a customized menu that suits your taste and budget.</p>
@@ -37,7 +37,7 @@ function App() {
           </Col>
         </Row>
 
-        <Row>
+        <Row className ="secA">
           <h2>My Crafted Dishes</h2>
           <Col>
             <Card>
@@ -68,10 +68,14 @@ function App() {
                 </Card.Text>
               </Card.Body>
             </Card>
+            <br/>
+            <br/>
           </Col>
+          
         </Row>
         <br/>
-        <Row>
+
+        <Row className ="secB">
           <h2>Services</h2>
           <Col>
           
@@ -95,14 +99,17 @@ function App() {
             <ListGroup.Item>Gluten-Free</ListGroup.Item>
             
           </ListGroup>
+          <br/>
           </Col>
-
-          
+         
          
         </Row>
+
+
         <br/>
-        <Row>
+        <Row className ="secA">
           <Col>
+          <br/>
           <Card>
             <Card.Header as="h2">My Mission</Card.Header>
             <Card.Body>
@@ -112,11 +119,12 @@ function App() {
               </Card.Text>
             </Card.Body>
           </Card>
+          <br/>
           </Col>
         </Row>
 
         <br/>
-        <Row >
+        <Row className ="secB">
           <h3>Contact Us</h3>
           <Col xs={12} md={6} className="d-flex flex-column ">
             <div className='logo'>
@@ -265,12 +273,12 @@ function App() {
       {/* more images */}
       
       {/* footer  */}
-      <div className="footer">
-        <div className="footer-columns">
+      {/* <div className="footer">
+        <div className="footer-columns"> */}
           {/* contact us information */}
-          <div className="contact">
+          {/* <div className="contact">
             
-          </div>
+          </div> */}
           {/* second column : form to submit a request */}
           {/* <div className="form">
             <h3>Have an inquiry?</h3>
@@ -312,8 +320,8 @@ function App() {
             </form>
           </div> */}
 
-        </div>
-      </div>
+       {/*  </div>
+      </div> */}
     </div>
   );
 }
