@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup'
 import { Card } from 'react-bootstrap';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 
@@ -15,11 +17,21 @@ function App() {
   
   return (
     <div className="App">
-      <Container fluid>
-        <Card  style={{maxWidth:"500px",margin:"auto"}} className="secA bg-dark text-white">
+      <Container >
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Chef Top Dawg Catering Co.</Navbar.Brand>
+          <Nav className="me-auto">
+            {/* <Nav.Link href="#home">Home</Nav.Link> */}
+            <Nav.Link href="#services">Services</Nav.Link>
+            <Nav.Link href="#contact-us">Contact Us</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+        <Card  style={{margin:"auto",maxWidth:"500px"}} className="secA bg-dark text-white">
             <Card.Img style={{height:"50vh"}}
               src="kelz.jpeg" alt="Card image" />
-            <Card.ImgOverlay>
+            <Card.ImgOverlay className="custom-overlay">
               <Card.Title>Chef Top Dawg</Card.Title>
               <Card.Text>
                 Make your events delicious and memorable
@@ -36,7 +48,7 @@ function App() {
          
           </Col>
         </Row>
-
+        <br/>
         <Row className ="secA">
           <h2>My Crafted Dishes</h2>
           <Col>
@@ -75,7 +87,7 @@ function App() {
         </Row>
         <br/>
 
-        <Row className ="secB">
+        <Row className ="secB" id="services">
           <h2>Services</h2>
           <Col>
           
@@ -124,16 +136,16 @@ function App() {
         </Row>
 
         <br/>
-        <Row className ="secB">
+        <Row className="secB" id="contact-us">
           <h3>Contact Us</h3>
           <Col xs={12} md={6} className="d-flex flex-column ">
             <div className='logo'>
-              <img src='http://placekitten.com/200' alt='logo'></img>
+              <img src='kelz.jpeg' alt='logo'></img>
             </div>
             
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: cateringco@gmail.com</p>
-            <p>Address: 123 Main Street, Las Vegas, NV 89101</p>
+            <p>Phone: (312) 907-9009</p>
+            <p>Email: mzqueen711@gmail.com</p>
+            <p>INstagram: @chef_top_dawg_lv </p>
           </Col>
 
           <Col xs={12} md={6}>

@@ -4,8 +4,8 @@
 }
 
 img {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   
 }
 
@@ -15,6 +15,11 @@ img {
 
 .secA{
   background-color: grey;
+}
+
+.custom-overlay {
+  background-color: rgba(128, 128, 128, 0.7); /* Grey with 70% opacity */
+  height: 15%;
 }
 
 /* .App-logo {
