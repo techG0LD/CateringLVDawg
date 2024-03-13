@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Container >
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="dark" data-bs-theme="dark" expand="md">
         <Container>
           <Navbar.Brand href="#home">Chef Top Dawg Catering Co.</Navbar.Brand>
           <Nav className="me-auto">
@@ -28,9 +28,10 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-        <Card  style={{margin:"auto",maxWidth:"500px"}} className="secA bg-dark text-white">
+      <br/>
+        <Card  style={{margin:"auto"}} className="secA bg-dark text-white">
             <Card.Img style={{height:"50vh"}}
-              src="kelz.jpeg" alt="Card image" />
+              src="hero.jpeg" alt="Card image" />
             <Card.ImgOverlay className="custom-overlay">
               <Card.Title>Chef Top Dawg</Card.Title>
               <Card.Text>
@@ -73,7 +74,7 @@ function App() {
           </Col>
           <Col>
             <Card>
-              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/500" alt="A decadent and moist chocolate cake"/>
+              <Card.Img style={{height:"30vh"}} variant="top" src="https://placekitten.com/500" alt="A decadent and moist chocolate cake"/>
               <Card.Body>
                 <Card.Text>
                 A decadent and moist chocolate cake with layers of rich chocolate ganache and whipped cream.
