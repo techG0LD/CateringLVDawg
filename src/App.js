@@ -54,30 +54,30 @@ function App() {
           <h2>My Crafted Dishes</h2>
           <Col>
             <Card>
-              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/400" alt="A fresh and colorful salad" />
+              <Card.Img style={{height:"30vh"}} variant="top" src="crab.jpeg" alt="A fresh and colorful salad" />
               <Card.Body>
                 <Card.Text>
-                A fresh and colorful salad with mixed greens, cherry tomatoes, cucumbers, carrots, and a tangy dressing.
+                Ocean’s Bounty on a Plate: A Sumptuous Crab Boil Bursting with Steamed Crabs, Spicy Sausages, Corn on the Cob, and Buttery Red Potatoes.
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card>
-              <Card.Img style={{height:"30vh"}} variant="top" src="http://placekitten.com/500" alt="A creamy and cheesy pasta" />
+              <Card.Img style={{height:"30vh"}} variant="top" src="burger.jpeg" alt="A creamy and cheesy pasta" />
               <Card.Body>
                 <Card.Text>
-                A creamy and cheesy pasta with penne, chicken, mushrooms, spinach, and parmesan cheese.
+                Savor the Juicy Bliss: A Symphony of Flame-Grilled Angus Beef, Melted Aged Cheddar, Caramelized Onions, and Sun-Kissed Tomato Relish, All Nestled Between Pillowy Brioche Buns.
                 </Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
             <Card>
-              <Card.Img style={{height:"30vh"}} variant="top" src="https://placekitten.com/500" alt="A decadent and moist chocolate cake"/>
+              <Card.Img style={{height:"30vh"}} variant="top" src="wings.jpeg" alt="A decadent and moist chocolate cake"/>
               <Card.Body>
                 <Card.Text>
-                A decadent and moist chocolate cake with layers of rich chocolate ganache and whipped cream.
+                Indulge in Winged Perfection: Crispy, Golden-Brown Wings Glazed with a Tangy Honey Sriracha Sauce, Sprinkled with Fresh Chopped Cilantro and Lime Zest.
                 </Card.Text>
               </Card.Body>
             </Card>
