@@ -8,7 +8,8 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import { Card } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form'
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
             <Card.Img style={{height:"50vh"}}
               src="hero.jpeg" alt="Card image" />
             <Card.ImgOverlay className="custom-overlay">
-              <Card.Title>Chef Top Dawg</Card.Title>
+              <Card.Title >Chef Top Dawg</Card.Title>
               <Card.Text>
                 Make your events delicious and memorable
               </Card.Text>
@@ -42,22 +43,16 @@ function App() {
             </Card.ImgOverlay>
         </Card>
         <br/>
-        <Row className='secB'>
-          <Col >
-          <h2>About Me</h2>
-          <p>Hi, I'm Kellz, the owner and chef of Chef Top Dawg Catering . I have been in the catering business for over 10 years, and I love creating mouth-watering dishes for all kinds of occasions. Whether it's a wedding, a birthday, a corporate event, or a family gathering, I can provide you with a customized menu that suits your taste and budget.</p>
-         
-          </Col>
-        </Row>
+        
         <br/>
         <Row className ="secA">
-          <h2>My Crafted Dishes</h2>
+          <h3>My Crafted Dishes</h3>
           <Col>
             <Card>
               <Card.Img style={{height:"30vh"}} variant="top" src="crab.jpeg" alt="A fresh and colorful salad" />
               <Card.Body>
                 <Card.Text>
-                Ocean’s Bounty on a Plate: A Sumptuous Crab Boil Bursting with Steamed Crabs, Spicy Sausages, Corn on the Cob, and Buttery Red Potatoes.
+                Ocean's Bounty on a Plate: A Sumptuous Crab Boil Bursting with Steamed Crabs, Spicy Sausages, Corn on the Cob, and Buttery Red Potatoes.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -89,7 +84,7 @@ function App() {
         <br/>
 
         <Row className ="secB" id="services">
-          <h2>Services</h2>
+          <h3>Services</h3>
           <Col>
           
           <p>Catering for any occasion, such as, but not LIMITED to...</p>
@@ -120,11 +115,32 @@ function App() {
 
 
         <br/>
-        <Row className ="secA">
+        
+        <Row className='secA'>
+        <Col xs={12} md={6}>
+        <div className='portrait'>
+              <img src='kelz.jpeg' alt='potrait'></img>
+        </div>
+        </Col>
+          <Col xs={12} md={6}  className='mt-4'>
+          
+          <p>
+            <strong>"I believe that food is not just a necessity, but an art. I strive to create dishes that are not only delicious, but also beautiful, healthy, and sustainable. I use fresh, local, and organic ingredients whenever possible, and I respect the diversity and preferences of our clients."</strong>
+          </p>
+          <p>
+            I am passionate about food and service. I provide you with a memorable and satisfying experience, from the first consultation to the last bite. Committed to excellence, innovation, and customer satisfaction. Chef Top Dawg is more than just a catering company; I'm your partner in creating unforgettable events.
+          </p>
+
+         
+          </Col>
+        </Row>
+
+
+        {/* <Row className ="secA">
           <Col>
           <br/>
           <Card>
-            <Card.Header as="h2">My Mission</Card.Header>
+            <Card.Header as="h3">My Mission</Card.Header>
             <Card.Body>
               <Card.Title>"I believe that food is not just a necessity, but an art. I strive to create dishes that are not only delicious, but also beautiful, healthy, and sustainable. I use fresh, local, and organic ingredients whenever possible, and I respect the diversity and preferences of our clients."</Card.Title>
               <Card.Text>
@@ -134,61 +150,94 @@ function App() {
           </Card>
           <br/>
           </Col>
-        </Row>
+        </Row> */}
 
         <br/>
         <Row className="secB" id="contact-us">
           <h3>Contact Us</h3>
           <Col xs={12} md={6} className="d-flex flex-column ">
             <div className='logo'>
-              <img src='kelz.jpeg' alt='logo'></img>
+              <img src='logo.jpeg' alt='logo'></img>
             </div>
-            
+            <br></br>
             <p>Phone: (312) 907-9009</p>
             <p>Email: mzqueen711@gmail.com</p>
-            <p>INstagram: @chef_top_dawg_lv </p>
+            <p>Instagram: @chef_top_dawg_lv </p>
           </Col>
 
           <Col xs={12} md={6}>
-          <h3>Have an inquiry?</h3>
+          <h4>Have an inquiry?</h4>
+            
             <p>Please fill out the form below and I will get back to you as soon as possible.</p>
-            <form >
+            <Form >
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridName">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" placeholder="Enter your name" required/>
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridPhone">
+                  <Form.Label>Phone #</Form.Label>
+                  <Form.Control type="tel" placeholder="Enter Phone number" />
+                </Form.Group>
+              </Row>
+
+              <Form.Group className="mb-3" controlId="formGridEmail">
+                <Form.Label>E-mail</Form.Label>
+                <Form.Control type="email" placeholder="Enter E-mail" required/>
+              </Form.Group>
+
+                <Form.Group  className="mb-3" controlId="formGridEvent">
+                  <Form.Label>Event/Occasion</Form.Label>
+                  <Form.Select defaultValue="Select an event type">
+                    <option value="">Select an event type</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="corporate">Corporate</option>
+                    <option value="family">Family</option>
+                    <option value="other">Other</option>
+                  </Form.Select>
+                </Form.Group>
+
+              <Row>
+                <Form.Group className="mb-3" as={Col} controlId="formGridDate">
+                  <Form.Label>Event Date</Form.Label>
+                  <Form.Control type="date"  />
+                </Form.Group>
+
+                <Form.Group className="mb-3" as={Col} controlId="formGridParty">
+                  <Form.Label>Party size</Form.Label>
+                  <Form.Control type="number" placeholder="Enter number of guests" required/>
+                </Form.Group>
+              </Row>
            
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name" required />
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required />
-              <label for="phone">Phone:</label>
-              <input type="tel" id="phone" name="phone" placeholder="Enter your phone" />
-              <label for="event">Event Type:</label>
-              <select id="event" name="event" required>
-                <option value="">Select an event type</option>
-                <option value="wedding">Wedding</option>
-                <option value="birthday">Birthday</option>
-                <option value="corporate">Corporate</option>
-                <option value="family">Family</option>
-                <option value="other">Other</option>
-              </select>
-              <label for="date">Event Date:</label>
-              <input type="date" id="date" name="date" required />
-              <label for="guests">Number of Guests:</label>
-              <input type="number" id="guests" name="guests" min="1" required />
-              <label for="menu">Menu Preference:</label>
-              <select id="menu" name="menu" required>
-                <option value="">Select a menu preference</option>
-                <option value="buffet">Buffet</option>
-                <option value="plated">Plated</option>
-                <option value="cocktail">Cocktail</option>
-                <option value="vegan">Vegan</option>
-                <option value="gluten-free">Gluten-Free</option>
-                <option value="other">Other</option>
-              </select>
-              <label for="message">Additional Message:</label>
-              <textarea id="message" name="message" placeholder="Enter any additional message"></textarea>
-              <button type="submit">Submit</button>
-            </form>
-          </Col>
+              <Form.Group  className="mb-3" controlId="formGridMenu">
+                  <Form.Label>Event/Occasion</Form.Label>
+                  <Form.Select defaultValue="Select an menu preference">
+                    <option value="">Select an menu preference</option>
+                    <option value="buffet">Buffet</option>
+                    <option value="plated">Plated</option>
+                    <option value="cocktail">Cocktail</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    <option value="other">Other</option>
+                  </Form.Select>
+                </Form.Group>
+
+                
+                <Form.Group as={Col} controlId="formGridName">
+                  <Form.Label>Additional Message</Form.Label>
+                  <Form.Control type="text" placeholder="Enter any additional message" />
+                </Form.Group>
+              <br></br>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+            <br></br>
+          </Col> 
         </Row>
+       
 
 
 
