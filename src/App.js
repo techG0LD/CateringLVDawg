@@ -1,4 +1,5 @@
 //import { BrowserRouter as Router,Link,Route,Routes } from 'react-router-dom';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
@@ -10,9 +11,61 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+import React, { useState } from 'react'
+
+
+
 
 
 function App() {
+
+
+
+const [name, setName] = useState('');
+const [phone, setPhone] = useState('');
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [email, setEmail] = useState('');
+const [occ, setOcc] = useState('');
+const [date, setDate] = useState('');
+const [party,setParty] = useState('')
+const [menu,setMenu] = useState('')
+const [message,setMessage] = useState('')
+
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  setIsSubmitting(true);
+
+  const data = {
+    name: name,
+    phone: phone,
+    email: email,
+    occ: occ,
+    date: date,
+    party: party,
+    menu: menu,
+    message: message
+    
+  };
+
+  fetch('http://localhost:5000/form-submit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    setIsSubmitting(false);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+    setIsSubmitting(false);
+  });
+}
 
 
   
@@ -34,7 +87,7 @@ function App() {
             <Card.Img style={{height:"50vh"}}
               src="hero.jpeg" alt="Card image" />
             <Card.ImgOverlay className="custom-overlay">
-              <Card.Title >Chef Top Dawg</Card.Title>
+              <Card.Title>Chef Top Dawg</Card.Title>
               <Card.Text>
                 Make your events delicious and memorable
               </Card.Text>
@@ -136,7 +189,6 @@ function App() {
         </Row>
 
 
-        
 
         <br/>
         <Row className="secB" id="contact-us">
@@ -154,28 +206,30 @@ function App() {
           <Col xs={12} md={6}>
           <h4>Have an inquiry?</h4>
             
-            <p>Please fill out the form below and I will get back to you as soon as possible.</p>
-            <Form >
+            <b><p>Please fill out the form below and I will get back to you as soon as possible.</p></b>
+
+            <Form onSubmit={handleSubmit}>
+
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridName">
                   <Form.Label>Name</Form.Label>
-                  <Form.Control type="text" placeholder="Enter your name" required/>
+                  <Form.Control type="text" placeholder="Enter your name" required value={name} onChange={e => setName(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPhone">
                   <Form.Label>Phone #</Form.Label>
-                  <Form.Control type="tel" placeholder="Enter Phone number" />
+                  <Form.Control type="tel" placeholder="Enter Phone number" required value={phone} onChange={e => setPhone(e.target.value)}/>
                 </Form.Group>
               </Row>
 
               <Form.Group className="mb-3" controlId="formGridEmail">
                 <Form.Label>E-mail</Form.Label>
-                <Form.Control type="email" placeholder="Enter E-mail" required/>
+                <Form.Control value={email} required type="email" placeholder="Enter E-mail" onChange={e => setEmail(e.target.value)} />
               </Form.Group>
 
                 <Form.Group  className="mb-3" controlId="formGridEvent">
                   <Form.Label>Event/Occasion</Form.Label>
-                  <Form.Select defaultValue="Select an event type">
+                  <Form.Select  value={occ} onChange={e => setOcc(e.target.value)}>
                     <option value="">Select an event type</option>
                     <option value="wedding">Wedding</option>
                     <option value="birthday">Birthday</option>
@@ -188,18 +242,18 @@ function App() {
               <Row>
                 <Form.Group className="mb-3" as={Col} controlId="formGridDate">
                   <Form.Label>Event Date</Form.Label>
-                  <Form.Control type="date"  />
+                  <Form.Control type="date" value={date} onChange={e => setDate(e.target.value)}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" as={Col} controlId="formGridParty">
                   <Form.Label>Party size</Form.Label>
-                  <Form.Control type="number" placeholder="Enter number of guests" required/>
+                  <Form.Control type="number" value={party} placeholder="Enter number of guests" onChange={e => setParty(e.target.value)} />
                 </Form.Group>
               </Row>
            
               <Form.Group  className="mb-3" controlId="formGridMenu">
-                  <Form.Label>Event/Occasion</Form.Label>
-                  <Form.Select defaultValue="Select an menu preference">
+                  <Form.Label>Menu preference</Form.Label>
+                  <Form.Select  value={menu} onChange={e => setMenu(e.target.value)}>
                     <option value="">Select an menu preference</option>
                     <option value="buffet">Buffet</option>
                     <option value="plated">Plated</option>
@@ -213,11 +267,12 @@ function App() {
                 
                 <Form.Group as={Col} controlId="formGridName">
                   <Form.Label>Additional Message</Form.Label>
-                  <Form.Control type="text" placeholder="Enter any additional message" />
+                  <Form.Control type="text" placeholder="Enter any additional message" value={message} onChange={e => setMessage(e.target.value)}/>
                 </Form.Group>
               <br></br>
-              <Button variant="primary" type="submit">
-                Submit
+              <Button variant="primary" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? 'Sent!' : 'Submit'}
+               
               </Button>
             </Form>
             <br></br>
