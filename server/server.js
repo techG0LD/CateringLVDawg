@@ -30,7 +30,7 @@ app.post('/form-submit', async (req, res) => {
     const mailOptions = {
       from: process.env.HOSTE,
       to: "puigster956@gmail.com",
-      // to: "mzqueen711@gmail.com",
+      //to: "mzqueen711@gmail.com",
       subject: 'New Inquery!',
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
