@@ -9,7 +9,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname,'../build')))
+app.use(express.static(path.join(__dirname,'../client/build')))
 
 // let word = process.env.HOSTP
 // console.log(word) 
