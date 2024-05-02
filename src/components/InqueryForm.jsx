@@ -32,7 +32,7 @@ function ContactForm() {
       
     };
 
-    fetch('https://cheftopdawg.netlify.app/form-submit', {
+    fetch('https://cateringlvdawg.onrender.com/form-submit', {
     // fetch('http://localhost:5000/form-submit', {  developement
       method: 'POST',
       headers: {
