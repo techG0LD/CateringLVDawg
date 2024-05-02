@@ -3,13 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
+const path = require('path');
 
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname,'../client/build')))
+app.use(express.static(path.join(__dirname,'../build')))
 
 // let word = process.env.HOSTP
 // console.log(word) 
